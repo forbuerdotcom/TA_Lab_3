@@ -1,6 +1,4 @@
-"""Слой работы с базой данных: чтение тем и цитат."""
 import psycopg2
-
 from models.quote import Quote
 from models.exceptions import ThemeNotFoundError, DatabaseError
 

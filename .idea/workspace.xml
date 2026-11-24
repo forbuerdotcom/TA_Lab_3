@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e60b05a5-4179-4f6e-8d22-a5214b2a7ac8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TA_Lab_3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/quote.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/favorite_service..py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/quote_repository.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/quote_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/history_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_generator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/favorite_service..py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/favorite_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/quote_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/quote_repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,10 +29,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3MTCSy8f8vYv8No45ayAqL1TfUO" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,6 +50,8 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/Предметы 5 семестр/Лисничук/TA_Lab_3",
     "node.js.detected.package.jshint": "true",
     "node.js.selected.package.jshint": "",
     "nodejs_package_manager_path": "npm"
