@@ -54,8 +54,6 @@ ta_lab_3/
 ├── tests/
 │   ├── __init__.py
 │   └── test_generator.py       # pytest-тесты логики
-├── data/
-│   └── (пусто — данные в PostgreSQL)
 ├── main.py                     # точка входа tkinter-версии
 ├── init.sql                    # инициализация БД (создание таблиц + 120 цитат)
 ├── Dockerfile                  # образ FastAPI
