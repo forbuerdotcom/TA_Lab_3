@@ -1,4 +1,3 @@
-"""Веб-версия. FastAPI, один файл, без шаблонов."""
 import os
 import random
 

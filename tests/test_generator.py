@@ -1,4 +1,3 @@
-"""Тесты для QuoteGenerator и модели Quote."""
 import pytest
 
 from models.quote import Quote
@@ -6,7 +5,6 @@ from models.exceptions import ThemeNotFoundError, EmptyThemeError
 from services.quote_generator import QuoteGenerator
 
 
-# ──────────── Фейковый репозиторий (без БД) ────────────
 class FakeRepository:
     """Простой репозиторий в памяти для тестов.
 
@@ -26,7 +24,6 @@ class FakeRepository:
         return self._data[theme]
 
 
-# ──────────── Фикстуры: данные для тестов ────────────
 @pytest.fixture
 def sample_quotes():
     """Готовые объекты Quote для тестов."""
@@ -52,7 +49,6 @@ def empty_repo():
     return FakeRepository({})
 
 
-# ──────────── Тесты QuoteGenerator ────────────
 def test_generate_returns_quote_with_requested_theme(repo_with_data):
     """Генератор должен вернуть цитату именно запрошенной темы."""
     gen = QuoteGenerator(repo_with_data)
@@ -87,7 +83,6 @@ def test_generate_randomness_within_theme(repo_with_data):
     assert len(results) >= 2
 
 
-# ──────────── Тесты модели Quote ────────────
 def test_quote_valid(sample_quotes):
     """Объект создаётся с правильными атрибутами."""
     q = sample_quotes[0]

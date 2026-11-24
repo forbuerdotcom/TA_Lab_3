@@ -40,7 +40,6 @@ class MainWindow(tk.Tk):
         self._refresh_chart()
         self._log("Приложение запущено. БД подключена.")
 
-    # ─────────── МЕНЮ ───────────
     def _build_menu(self):
         menubar = tk.Menu(self)
 
