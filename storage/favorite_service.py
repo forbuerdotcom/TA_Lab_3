@@ -11,7 +11,7 @@ class FavoriteService:
     def add(self, quote: Quote):
         try:
             with self.conn.cursor() as cur:
-                # Проверяем, не в избранном ли уже эта цитата
+                # проверяем, не в избранном ли уже эта цитата
                 cur.execute("SELECT id FROM favorites WHERE quote_id = %s", (quote.id,))
                 if cur.fetchone() is not None:
                     raise FavoriteError("Эта цитата уже в избранном")

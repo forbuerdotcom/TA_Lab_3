@@ -1,3 +1,4 @@
+"""Читает темы и цитаты из PostgreSQL."""
 import psycopg2
 from models.quote import Quote
 from models.exceptions import ThemeNotFoundError, DatabaseError
@@ -43,3 +44,24 @@ class QuoteRepository:
             raise ThemeNotFoundError(f"Тема '{theme_name}' не найдена или пуста")
 
         return [Quote(id=r[0], text=r[1], theme=r[3], author=r[2]) for r in rows]
+
+    def get_by_id(self, quote_id: int) -> Quote:
+        """Возвращает одну цитату по её id. Нужен для избранного: по id из API
+        поднимаем полноценный объект Quote, который требует FavoriteService.add().
+        """
+        try:
+            with self.conn.cursor() as cur:
+                cur.execute("""
+                    SELECT q.id, q.text, q.author, t.name
+                    FROM quotes q
+                    JOIN themes t ON q.theme_id = t.id
+                    WHERE q.id = %s
+                """, (quote_id,))
+                row = cur.fetchone()
+        except psycopg2.Error as e:
+            raise DatabaseError(f"Ошибка чтения цитаты по id: {e}") from e
+
+        if not row:
+            raise ThemeNotFoundError(f"Цитата с id={quote_id} не найдена")
+
+        return Quote(id=row[0], text=row[1], theme=row[3], author=row[2]) 

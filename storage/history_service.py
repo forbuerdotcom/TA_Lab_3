@@ -23,7 +23,7 @@ class HistoryService:
             raise DatabaseError(f"Ошибка записи истории: {e}") from e
 
     def get_recent(self, limit: int = 50) -> list[tuple]:
-        """Возвращает список кортежей (id, time, theme, quote_text)."""
+        """  возвращает список кортежей (id, time, theme, quote_text)."""
         try:
             with self.conn.cursor() as cur:
                 cur.execute("""
@@ -48,7 +48,7 @@ class HistoryService:
             raise DatabaseError(f"Ошибка очистки истории: {e}") from e
 
     def count_by_theme(self) -> dict[str, int]:
-        """Для графика: сколько раз сгенерировали по каждой теме."""
+        """для графика: сколько раз сгенерировали по каждой теме."""
         try:
             with self.conn.cursor() as cur:
                 cur.execute("""

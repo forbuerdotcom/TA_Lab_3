@@ -54,18 +54,18 @@ def test_generate_returns_quote_with_requested_theme(repo_with_data):
     gen = QuoteGenerator(repo_with_data)
     q = gen.generate("Наука")
     assert q.theme == "Наука"
-    assert "Наука" in q.text or q.author == "Эйнштейн"  # проверяем, что вернулась реальная цитата
+    assert q.id in (1, 2)  # одна из двух цитат темы "Наука"
 
 
 def test_generate_unknown_theme_raises(empty_repo):
-    """Запрос несуществующей темы → ThemeNotFoundError."""
+    """Запрос несуществующей темы -> ThemeNotFoundError."""
     gen = QuoteGenerator(empty_repo)
     with pytest.raises(ThemeNotFoundError):
         gen.generate("Такой темы нет")
 
 
 def test_generate_from_empty_theme_raises():
-    """Тема существует, но в ней 0 цитат → EmptyThemeError."""
+    """Тема существует, но в ней 0 цитат -> EmptyThemeError."""
     repo = FakeRepository({"Пустая": []})
     gen = QuoteGenerator(repo)
     with pytest.raises(EmptyThemeError):
@@ -93,13 +93,13 @@ def test_quote_valid(sample_quotes):
 
 
 def test_quote_empty_text_raises():
-    """Пустой текст цитаты → ValueError."""
+    """Пустой текст цитаты -> ValueError."""
     with pytest.raises(ValueError):
         Quote(id=1, text="", theme="Наука")
 
 
 def test_quote_empty_theme_raises():
-    """Пустая тема → ValueError."""
+    """Пустая тема -> ValueError."""
     with pytest.raises(ValueError):
         Quote(id=1, text="Цитата", theme="")
 
